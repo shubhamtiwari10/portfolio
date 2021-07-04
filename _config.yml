@@ -18,8 +18,8 @@ paginate_path: /blog/page:num/
 
 # Social media links in footer
 
-linkedin: "https://www.linkedin.com/in/shubham-tiwari-11aab4154/"
-github: "https://github.com/shubhamtiwari10"
+linkedin: "shubham-tiwari-11aab4154/"
+github: "shubhamtiwari10"
 
 highlighter: rouge
 markdown: kramdown
