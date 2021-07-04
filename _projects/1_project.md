@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Short Project
-description: description of the short project which is long enough
+title: Fitbit Data's Exploratory Analysis
+description: Analyse Fitbit data from Fitbit API.
 ---
-Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}.
+You Can see the code i used [here](https://github.com/shubhamtiwari10/fitbit-analysis){:target="_blank"} on github.
 
-H1 Header
+Using Fitbit API to perform exploratory analysis on its data.
 ============
 
 Paragraphs are separated by a blank line.
