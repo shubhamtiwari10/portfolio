@@ -5,7 +5,7 @@ description: Data Analyst | Sata Scientist
 
 baseurl: /portfolio #name of GitHub repository
 url: "" #custom url to be used instead of GitHub repository
-email: #
+email: allotherweretakensothis@gmail.com
 
 
 highlighter: rouge
@@ -17,12 +17,9 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-facebook: "#"
-twitter: "#"
-linkedin: "#"
-github: "#"
-researchgate: "#"
-orcid: "#"
+
+linkedin: "https://www.linkedin.com/in/shubham-tiwari-11aab4154/"
+github: "https://github.com/shubhamtiwari10"
 
 highlighter: rouge
 markdown: kramdown
