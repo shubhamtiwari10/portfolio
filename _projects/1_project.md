@@ -141,7 +141,7 @@ Here's a "line block" (note how whitespace is honored):
 
 and images can be specified like so:
 
-![example image](https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop "An exemplary image")
+![example image](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/1.PNG?raw=true)
 
 Inline math equation: $\omega = d\phi / dt$. Display
 math should get its own line like so:
