@@ -46,87 +46,28 @@ First, I don't have a lot of data yet! I have only used my Fitbit for a couple m
 Question 2: Do I need more sleep the night after I don't get a lot of sleep? In other words, am I building up a sleep deficit?
 ------------
 
-### An h3 header ###
+In the model below, I predict the difference in amount of sleep for a given day from the previous nights' hours of sleep. To do so, I created a variable to capture the difference in amount of sleep I got from the night before. I then used an ordinary least squares regression model. 
 
-Now a nested list:
+Question 3 Results: Yes, I have built up a sleep deficit.
 
- 1. First, get these ingredients:
+![6](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/6.PNG?raw=true)
 
-      * carrots
-      * celery
-      * lentils
+The regression table shows that how many hours I slept the previous night ('hours_prev') negatively predicts the difference in amount of sleep I get the next day. Put more simply, this means that if I get a good night's sleep, the next night, I don't need as much sleep. Conversely, if I don't get a lot of sleep, the next night, I make up for it by sleeping longer.
 
- 2. Boil some water.
+To make this finding easier to digest, let us visualize the relationship.
 
- 3. Dump everything in the pot and follow
-    this algorithm:
+![7](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/7.PNG?raw=true)
 
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
+Here is the negative linear relationship as seen in our regression table.
 
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
-
-[^1]: Some footnote text.
 
 Summary and Next Steps
 ------------ 
 
-Tables can look like this:
-
-| Header 1 | Header 2                   | Header 3 |
-|:--------:|:--------------------------:|:--------:|
-| data1a   | Data is longer than header | 1        |
-| d1b      | add a cell                 |          |
-| lorem    | ipsum                      | 3        |
-|          | empty outside cells        |          |
-| skip     |                            | 5        |
-| six      | Morbi purus                | 6        |
+to recap, I imported data using Fitbit's API, worked with .json data, visualized my data, ran linear models, and performed a t-test. I found that (1) my activity level is independent from how much sleep I get, and (2) I built up a sleep deficit over time.
 
 
-A horizontal rule follows.
+What I would like to do next is collect more data! I would also like to create some interactive visuals and run some more sophisticated models on my data. Finally, I would like to more thoroughly explore my heart rate data. The closer I get to defending my critique, the higher it seems to get. Should be fun to test if that is statistically significant.
 
-***
+ 
 
-Here's a definition list:
-
-apples
-  : Good for making applesauce.
-
-oranges
-  : Citrus!
-
-tomatoes
-  : There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term and  its definition to spread things out more.)
-
-Here's a "line block" (note how whitespace is honored):
-
-| Line one
-|   Line too
-| Line tree
-
-and images can be specified like so:
-
-![example image](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/1.PNG?raw=true)
-
-Inline math equation: $\omega = d\phi / dt$. Display
-math should get its own line like so:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
