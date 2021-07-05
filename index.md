@@ -7,11 +7,9 @@ profile:
 published: true
 ---
 
-Hi,
+Since I was young, I have always enjoyed to solve puzzles. So that’s how I look at big data sets: to me it is one big puzzle I want to solve. Finding patterns nobody else sees is the challenge to me.
 
-I help buisnesses work better and generate value in products.
+As a data analyst and data scientist, I translate data into valuable and comprehensible insights. My goal is to improve results, make the right decisions and save costs.
 
-Using various subsets of data analytics to analyze inefficiencies in supply chain, resources ,capital leakage and with product or services and using data to make mission critical decisions.
-
-Checkout my [Linkedin](https://www.linkedin.com/in/shubham-tiwari-11aab4154/){:target="_blank"} and [Github](https://github.com/shubhamtiwari10){:target="_blank"} to connect or drop me a mail at [allotherweretakensothis@gmail.com](mailto:allotherweretakensothis@gmail.com){:target="_blank"}.
+You can drop me a mail at [allotherweretakensothis@gmail.com](mailto:allotherweretakensothis@gmail.com){:target="_blank"}.
 
