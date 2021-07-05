@@ -6,7 +6,7 @@ $base-line-height: 1.7;
 
 $spacing-unit:     30px;
 $light-gray: gray;
-$text-color:       #333;
+$text-color:       #ffffff;
 $background-color: #fdfdfd;
 $brand-color:      #60c17d;
 
@@ -18,7 +18,7 @@ $text-color: #333;
 // Color scheme for dark modes
 $body-bg-dark: #061725;
 $projectbox-dark: lighten($body-bg-dark, 10%);
-$text-color-dark: #777;
+$text-color-dark: #ffffff;
 
 // Colour palette for project boxes
 $theme1: ("one",#388087),("two", #6FB3B8),("three",#BADFE7),("four",#C2EDCE),("five",#F6F6F2);
