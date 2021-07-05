@@ -18,7 +18,7 @@ paginate_path: /blog/page:num/
 
 # Social media links in footer
 
-linkedin: "shubham-tiwari-11aab4154/"
+linkedin: "shubham-tiwari-data-analysis/"
 github: "shubhamtiwari10"
 
 highlighter: rouge
