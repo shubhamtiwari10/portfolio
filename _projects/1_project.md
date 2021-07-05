@@ -8,66 +8,43 @@ You Can see the code i used [here](https://github.com/shubhamtiwari10/fitbit-ana
 Using Fitbit API to perform exploratory analysis on its data.
 ============
 
-Paragraphs are separated by a blank line.
+I have tried to analyse my FitBit data to see how my sleep affects my activity level and to check wether or not i have built up sleep deficit.
 
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like:
+Note: In order to get my Fitbit data, I first had to set up a Fitbit API. Then, I ran a separate script.
 
-  * this one
-  * that one
-  * the other one
-
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
-
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
-
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-
-H2 Header
+Question 1: Does the amount of sleep I get the night before be used to predict or correlate my activity level for the next day ?
 ------------
 
-Here's a numbered list:
+Notice that the distribution appears to be bimodal. However, I happen to know that this is because I take naps, and those tend to be 2 hours or less. Also, my Fitbit had some software bug initially, so it would sometimes run out of batteries in the middle of the night randomly.
 
- 1. first item
- 2. second item
- 3. third item
+![1](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/1.PNG?raw=true)
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
+For the purposes of this project, I will omit naps and/or artificially shortened sleep (< 3 hours).
 
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
+![2](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/2.PNG?raw=true)
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
+Looks pretty normal.
+ 
+Here, I define activity level as the number of steps taken. My activity distribution looks normal.
 
-~~~
-define foobar() {
-    print "Welcome to flavor country!";
-}
-~~~
+![3](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/3.PNG?raw=true)
 
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
+My sleep and activity data over the week:
 
-~~~python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print(i)
-~~~
+![4](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/4.PNG?raw=true)
 
+Question 1 Results: My sleep does not predict my activity level the next day.
 
+So, we can see from the regression table that how many hours I slept the previous night ('hours_prev') does not significantly predict the amount of steps I take the next day (p = .63). This might be for a variety of reasons.
+
+First, I don't have a lot of data yet! I have only used my Fitbit for a couple months. Second, I am a graduate student, and my sleep is incredibly variable. Third, I love to be active! Even if I am tired, a run usually makes me feel better. Long story short is, I need more data.
+
+![5](https://github.com/shubhamtiwari10/fitbit-analysis/blob/main/visualizations/5.PNG?raw=true)
+
+ That flat line shows that there is no linear relationship.
+
+Question 2: Do I need more sleep the night after I don't get a lot of sleep? In other words, am I building up a sleep deficit?
+------------
 
 ### An h3 header ###
 
@@ -102,6 +79,9 @@ doc](local-doc.html), and to a [section heading in the current
 doc](#an-h2-header). Here's a footnote [^1].
 
 [^1]: Some footnote text.
+
+Summary and Next Steps
+------------ 
 
 Tables can look like this:
 
