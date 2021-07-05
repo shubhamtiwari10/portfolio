@@ -7,8 +7,11 @@ profile:
 published: true
 ---
 
-[Gradfolio](https://github.com/jitinnair1/gradfolio){:target="_blank"} is a responsive, dark-mode ready Jekyll theme designed keeping academia in mind. The easiest way to install the theme is to fork it using GitHub. Check the README file for [instructions](https://github.com/jitinnair1/gradfolio#installation){:target="_blank"}.
+Hi, 
+'i love to play with data.'
+And help buisnesses work better and generate value in products.
 
-If you want to use this space to write your biography here, edit the `index.md` file. You can put a picture in, too. Rename your picture to `profile.png` and put it in the `assets/images/` folder.
+Using various subsets of data analytics to transform and squeeze data to perform data analysis and help businesses analyze inefficiencies in supply chain, resources ,capital leakage and with product or services and using data to make mission critical decisions. Performing compilation of data, cleaning, analysis to create dashboards, find patterns, and perform predictions or diagnostics.occasionaly i would also create data models ,applu various machine learning models for future insights and a/b testing parameters.
 
-The social-icons footer can be used to link profiles from GitHub, OrcID and ReasearchGate aprart form the usual Twitter, LinkedIn and Facebook. You can add your user ID in the `_config.yml` file to link your accounts.
+Checkout my [linkedin] and [github] to connect or drop me a mail at [allotherweretakensothis@gmail.com].
+
