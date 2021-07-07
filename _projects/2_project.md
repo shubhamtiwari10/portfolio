@@ -1,15 +1,29 @@
 ---
 layout: post
-title: A longer Project Title
-description: short project description
+title: Modeling System Resource Usage for Predictive Scheduling
+description: Time-series forecasting
 ---
 
-Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}.
+You can see how i did this [here](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling){:target="_blank"}.
 
-H1 Header
+A machine learning-based solution for real-time resource allocation in the cloud (Time-series forecasting)
 ============
 
-Paragraphs are separated by a blank line.
+ I consulted with a company for a project using machine learning and neural networks to model and predict network usage. This company offers startups and new developers a simple yet revolutionary platform to manage their applications and cloud resources in one place. It also serves as a marketplace for additional applications and services, as well as an easy way to work with multiple APIs in one location.
+
+As a consultant, I wanted to get a sense of company’s needs to help them reach their goals. Company was interested in gaining a sense of their current network resource usage and provisioning. In addition, Company wanted to move towards a machine learning approach to to make real-time predictions and automate scheduling of provisions. This was an exciting new challenge.
+
+**The Challenge**
+ 
+Historically, companies like these have to balance the competing needs of minimizing cost of paying for CPU bandwidth, for example, but also minimizing downtime by over-provisioning. This was even evidenced in the publicly available dataset from the TUDelft archive I used for my analysis. This data had similar characteristics to company’s actual data.
+
+Therefore, my role as a consultant was to develop a model that will provide a more intelligent prediction of resource usage.
+
+**Here is how I translated Company’s business objectives into an actionable deliverable:**
+
+First, I used **time-series analysis, advanced regression techniques, and time series cross-validation** in Python (using scikit-learn) to characterize resource usage as well as **identify important predictive features**.
+
+Next, I implemented DeepAR, a recently developed built-in algorithm from Amazon Sagemaker (hosted on AWS) to help Company shift towards **real-time analytics**. Amazon SageMaker DeepAR is a **supervised learning algorithm used to forecast time series using recurrent neural networks (RNN)**. Below is a summary of what I did for Company.
 
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
 look like:
