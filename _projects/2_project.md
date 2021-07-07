@@ -27,11 +27,11 @@ Next, I implemented DeepAR, a recently developed built-in algorithm from Amazon 
 
 ![1](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/1.PNG?raw=true)
 
-![2](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/2.PNG)
+![2](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/2.PNG?raw=true)
 
 **Part 1. Characterizing Company’s Resource Usage**
 
-![3](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/3.PNG)
+![3](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/3.PNG?raw=true)
 
 **Step 1: Develop Preprocessing Pipeline**
 
@@ -42,19 +42,19 @@ I started by pulling the activity traces from 500 Virtual Machines (VMs) over a 
 
 My first question was whether or not CPU capacity was ever met (see Figure 1). I plotted the total CPU Capacity provisioned across all VMs (in red) along with the CPU Usage across all VMs (in blue). We can clearly see that the server is over-provisioning by a surprising amount. In fact, the average CPU usage is only about 7% of what was being provisioned. Clearly, there is room for improvement here.
 
-![4](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/4.PNG)
+![4](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/4.PNG?raw=true)
 
 Figure 1. Characterizing overall network CPU provisioning and usage. 
 
 Next, I wanted to get a sense of the seasonal trends in CPU usage across the three-month time span. To do this, I used moving averages with a 24-hour window (to capture the seasonality of this hourly data). I used this technique to get a sense of higher level trends in data over time, as well as spot any potential outliers. We can see this in Figure 2. that there is short-term seasonality (or trends) within the data as indicated by the purple line, but the patterns change over the long term, especially across months. This method has also caught some anomalies in the data flagged with red dots. While removing outliers would make modeling easier and perhaps more accurate, the nature of network usage is unpredictable, and therefore my model needed to be able to handle anomalous activity.
 
-![6](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/6.PNG)
+![6](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/6.PNG?raw=true)
 
 Figure 2. Moving averages in hourly data to capture higher level trends. Anomalies and confidence bounds shown red in second image (swipe to see).
 
 Finally, I wanted to check the autocorrelations within the CPU Usage data in order to further assess the seasonality. In Figure 3. we can see again that CPU usage is a short-term time series (i.e., has short-term predictability), as evidenced by the high peaks early in the graph. Now that I have assessed some patterns in the data, I wanted to test a few models and see how well they were able to predict future CPU usage.
 
-![7](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/7.PNG)
+![7](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/7.PNG?raw=true)
 
  Figure 3. Autocorrelation plot for CPU usage.
 
@@ -68,13 +68,13 @@ I tested a traditional linear regression model first. The model fit the data rea
 
 I then used a scaled linear regression model, again using time series train-test-split, and 5-fold-time-series-cross-validation. I also included time-lags ranging from 3–9 hours as additional features (I narrowed the range of time lags because of the short-term predictability of the data). This model fit the data slightly better (MAE = 31.14%). However, when looking at the predictive power of the coefficients, only the third time lag feature is significant. I also wanted to prevent overfitting. Therefore, next I tried feature reduction using regularization techniques including Lasso and Ridge regression. The scaled Ridge Regression model fit the data the best (MAE = 30.61%), compared to Lasso regression (MAE = 30.98%) and the previous models. I was successful in being able to model future CPU usage, as evidenced by an MAE of 30.61% for a highly variable dataset.
 
-![8](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/8.PNG)
+![8](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/8.PNG?raw=true)
 
 Figure 4. Scaled Ridge Regression Model (L2 regularization for feature reduction). MAE = 30.61%
 
 **Summary Part 1**
 
- ![9](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/9.PNG)
+ ![9](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/9.PNG?raw=true)
 
 I learned a great deal from initial exploration and early models. First, CPU usage is highly unpredictable and CPU usage is on average less than 7%. According to my models, a scaled Ridge Regression model made the most accurate predictions. L2 regularization found that the most significant predictors were previous time-lags. I also learned that the data has short-term predictability.
 
@@ -115,7 +115,7 @@ To set up the modeling pipeline, first, I set initial hyperparameters based on o
 
 Figure 5. shows an example of the DeepAR model’s predictions for one time series (one VM). The model appears to be very accurate based on our visual exploration of the predictions. However, notice how my model (in orange) slightly underestimates the actual usage (the blue line). Therefore, in consultation with Company, I decided that they should take the upper bound of the forecast and add a cushion (e.g., 100 MHz) to reduce incidents of under-provisioning (shown in green).  My Suggested Provision = Upper Limit + 100 CPU [MHz] cushion.
 
-![10](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/10.PNG)
+![10](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/10.PNG?raw=true)
 
 Figure 5. RNN model predictions (orange), my suggested provision (in green). While this might seem like my suggestion is high, in the context of what was originally provisioned (shown in red in second figure), we can see that my model significantly reduces over-provisioning and saves CPU.
 
@@ -136,7 +136,7 @@ To quantify the actionable deliverable I made for company, I randomly sampled tw
 
 Below in Figure 6. we can see that the original usage was only 23% of what was being provisioned. Compare this to my model, where my suggested limit, even with a large cushion, significantly reduces CPU over-provisioning, and now 82.3% of provisioned CPU is used.
 
-![11](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/11.PNG)
+![11](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/11.PNG?raw=true)
 
   Figure 6. Original usage ratio (left) compared to my model's usage ratio (right).
 
@@ -144,7 +144,7 @@ Below in Figure 6. we can see that the original usage was only 23% of what was b
 
 In a more dramatic example, for this VM time series, only 1.3% of CPU was being used compared to what was being provisioned. Compare this to my new model, which again greatly reduced over-provisioning.
 
-![12](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/12.PNG)
+![12](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/12.PNG?raw=true)
 
 Figure 7. Original usage ratio (left) compared to my model's usage ratio (right).
 
@@ -154,7 +154,7 @@ Figure 7. Original usage ratio (left) compared to my model's usage ratio (right)
 
 **Summary of Part 2**
 
-![13](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/13.PNG)
+![13](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/13.PNG?raw=true)
 
 With my model and real-time pipeline on AWS, I reduced projected CPU over-provisioning by up to 97% for a given VM time series, saving Compny not only a great deal of time, but a great deal of money.
 
@@ -170,4 +170,4 @@ Finally, there is no added risk when applying my model to predict future usage, 
 
 **Part 3: Actionable Deliverables**
 
-![14](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/14.PNG)
+![14](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/14.PNG?raw=true)
