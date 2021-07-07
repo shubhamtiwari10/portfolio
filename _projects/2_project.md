@@ -25,7 +25,7 @@ First, I used **time-series analysis, advanced regression techniques, and time s
 
 Next, I implemented DeepAR, a recently developed built-in algorithm from Amazon Sagemaker (hosted on AWS) to help Company shift towards **real-time analytics**. Amazon SageMaker DeepAR is a **supervised learning algorithm used to forecast time series using recurrent neural networks (RNN)**. Below is a summary of what I did for Company.
 
-![1](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/1.PNG)
+![1](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/1.PNG?raw=true)
 
 ![2](https://github.com/shubhamtiwari10/Modeling-System-Resource-Usage-for-Predictive-Scheduling/blob/main/vizualisation/2.PNG)
 
